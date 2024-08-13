@@ -1,0 +1,11 @@
+services:
+  registry-view:
+    image: registry-view
+    build: 
+      context: .
+    container_name: registry-view
+    network_mode: host
+    ports:
+      - "8000:8000"
+    environment:
+      - DOCKER_REGISTRY_URL=http://localhost:5000/v2
